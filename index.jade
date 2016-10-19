@@ -1,0 +1,53 @@
+doctype html
+html
+ head
+  meta(charset='utf-8')
+  title App
+  meta(name='description', content='')
+  meta(name='viewport', content='width=device-width')
+  link(rel='stylesheet', type='text/css', href='slate.css')
+ script(src='index.js', defer='')
+ body
+  nav.navbar.navbar-default.navbar-static-top(role='navigation')
+   .container-fluid
+    .navbar-header
+     button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+      span.sr-only Toggle navigation
+      span.icon-bar
+      span.icon-bar
+      span.icon-bar
+     span.navbar-brand(data-toggle='modal', data-target='#about') App
+    .nav.navbar-nav.navbar-right
+     select.form-control.formats  
+     .btn-group
+      button.btn.btn-default.action.compress(type='button', data-action='compress') Compress
+      button.btn.btn-default.action.prettify(type='button', data-action='prettify') Prettify
+  #editor
+  nav.navbar.navbar-default.navbar-fixed-bottom(role='navigation')
+   .container-fluid
+    .nav.navbar-nav.navbar-left
+     .status.format Text
+     .status.message Drag or paste a file.
+    .nav.navbar-nav.navbar-right
+     .progress
+      .progress-bar.progress-bar-striped.progress-bar-info.active
+       span.sr-only Working
+  #about.modal.fade
+   .modal-dialog.modal-sm
+    .modal-content
+     .modal-header
+      button.close(type='button', data-dismiss='modal')
+       span(aria-hidden='true') ×
+       span.sr-only Close
+      h4.modal-title
+       | App
+       span.addendum
+        | v
+        span.version
+     .modal-body
+      p Ben Eaves 2016
+      a.btn.btn-default.btn-lg(target='_blank', href='https://angeal185.github.io/') My Website
+      table#software-table.table
+       thead.sr-only
+        th Package
+        th Version
